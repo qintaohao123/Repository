@@ -1,0 +1,8 @@
+*.g.cs
+*.g.i.cs
+*.cache
+*.Cache
+*.baml
+*.exe
+*.g.resources
+*.Properties.Resources.resources
