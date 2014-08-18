@@ -7,3 +7,8 @@
 *.g.resources
 *.Properties.Resources.resources
 *.lref
+/WpfApplication1/WpfApplication1/bin/Release/WpfApplication1.pdb
+/WpfApplication1/WpfApplication1/bin/Release/WpfApplication1.vshost.exe.manifest
+/WpfApplication1/WpfApplication1/obj/x86/Release/TempPE/Properties.Resources.Designer.cs.dll
+/WpfApplication1/WpfApplication1/obj/x86/Release/WpfApplication1.csproj.FileListAbsolute.txt
+/WpfApplication1/WpfApplication1/obj/x86/Release/WpfApplication1.pdb
