@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="WpfApplication1.MyUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Name="MyUserCtrl">
+    <Grid>
+        <TextBox Height="{Binding Path=TextBoxHeight, Mode=TwoWay, ElementName=MyUserCtrl}" Background="Bisque" HorizontalAlignment="Left" Text="{Binding Path=InputContent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Margin="177,125,0,0" x:Name="TextBox1" VerticalAlignment="Top" Width="143"
+                 TextChanged="TextBox1_OnTextChanged" Tag="{Binding Path=InputContent, Mode=TwoWay}" PreviewKeyDown="TextBox1_OnPreviewKeyDown"/>
+        <!--        IsOpen="{Binding Path=IsPopup}"-->
+        <Popup PlacementTarget="{Binding ElementName=TextBox1}" IsOpen="{Binding Path=IsPopup}" StaysOpen="False" Width="143" Placement="Top" >
+            <ListBox x:Name="tipsListBox"  ItemsSource="{Binding Path=TextBlocks, Mode=TwoWay}" SelectionChanged="Selector_OnSelectionChanged" PreviewKeyDown="TextBox1_OnPreviewKeyDown">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Green"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="Aqua"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Green"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="LightGreen" />
+                        </Style.Resources>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+            <!--            ItemsSource="{Binding Source=TextBlocks}"-->
+        </Popup>
+<!--        <wpfApplication1:MyUserControl Input="{Binding Path=MyTalkRecord.Message}"></wpfApplication1:MyUserControl>-->
+    </Grid>
+</UserControl>
