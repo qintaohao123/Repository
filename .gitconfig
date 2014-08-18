@@ -1,6 +1,6 @@
 [core]
     editor = vim
-    excludesfile = /home/amaranth/.gitignore
+    excludesfile = /.gitignore
 [user]
     name = 
     email = 
