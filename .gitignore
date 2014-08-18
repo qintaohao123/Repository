@@ -6,3 +6,4 @@
 *.exe
 *.g.resources
 *.Properties.Resources.resources
+*.lref
